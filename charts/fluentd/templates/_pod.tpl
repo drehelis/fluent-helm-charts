@@ -8,6 +8,7 @@ imagePullSecrets:
 priorityClassName: {{ .Values.priorityClassName }}
 {{- end }}
 serviceAccountName: {{ include "fluentd.serviceAccountName" . }}
+shareProcessNamespace: {{ .Values.shareProcessNamespace }}
 securityContext:
   {{- toYaml .Values.podSecurityContext | nindent 2 }}
 {{- with .Values.terminationGracePeriodSeconds }}

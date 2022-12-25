@@ -16,6 +16,11 @@ image:
 ## Ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
 
+# shareProcessNamespace enables process namespace sharing between containers
+# This is useful if application must be signaled, e.g. to send a SIGHUP for a config reload
+# Ref: https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/
+shareProcessNamespace: false
+
 serviceAccount:
   create: true
   annotations: {}
